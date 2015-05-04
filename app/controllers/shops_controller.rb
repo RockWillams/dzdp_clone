@@ -58,6 +58,6 @@ class ShopsController < ApplicationController
     end
 
     def shop_params
-      params.require(:shop).permit(:title, :comment, :rating)
+      params.require(:shop).permit(:title, :comment, :rating, :image)
     end
 end
