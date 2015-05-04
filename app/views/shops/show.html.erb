@@ -1,18 +1,26 @@
-<%= image_tag @shop.image.url(:medium) %>
-<p>
-  <strong>Title:</strong>
-  <%= @shop.title %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= @shop.comment %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @shop.rating %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @shop.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Title:</strong></td>
+                <td><%= @shop.title %></td>
+              </tr>
+              <tr>
+                <td><strong>Rating:</strong></td>
+                <td><%= @shop.rating %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>
