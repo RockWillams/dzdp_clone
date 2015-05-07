@@ -16,7 +16,24 @@
               </tr>
             </tbody>
           </table>
+          <%= link_to 'Write a Review', new_shop_review_path(@shop) %>
         </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review-title"><%= @shop.title %></h1>
+        <p><%= @shop.comment %></p>
+
+        <% if @reviews.blank? %>
+          <h3>No reviews yet. Would you like to be the first?</h3>
+          <%= link_to 'Write a Review', new_shop_review_path(@shop), class: 'btn btn-danger' %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <p><%= review.rating %></p>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

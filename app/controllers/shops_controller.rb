@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(shop_id: @shop.id).order("created_at DESC")
   end
 
   def new
