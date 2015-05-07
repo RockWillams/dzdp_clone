@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :shops
-
+  has_many :reviews, dependent: :destroy
 
 end
 
