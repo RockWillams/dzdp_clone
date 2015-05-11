@@ -19,10 +19,11 @@ end
 shops = Shop.all
 
 # Create Comments
-20.times do
+100.times do
  Review.create!(
    shop: shops.sample,
-   comment: Faker::Lorem.paragraph
+   comment: Faker::Lorem.paragraph,
+   rating: Faker::Number.between(from=1, to=5)
  )
 end
 
