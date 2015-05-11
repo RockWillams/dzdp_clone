@@ -3,16 +3,8 @@ class ReviewsController < ApplicationController
   before_action :set_shop
   before_action :authenticate_user!
 
-
-  respond_to :html
-
-  def index
-    @reviews = Review.all
-    respond_with(@reviews)
-  end
-
   def new
-    @review = current_user.reviews.build
+    @review = Review.new
   end
 
   def edit
