@@ -1,27 +1,28 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="row">
-      <div class="col-md-4">
-        <%= image_tag @shop.image.url(:medium) %>
-        <div class="star-rating" data-score= <%= @avg_review %> ></div>
-        <em><%= "#{@reviews.length} reviews"%></em>
+      <div class="col-md-5">
+        <%= image_tag @shop.image.url, class: "img-thumbnail" %>
         <div class="table-responsive">
           <table class="table">
             <tbody>
               <tr>
+                <td><strong>小众评价:</strong></td>
+                <td>
+                  <div class="star-rating" data-score= <%= @avg_review %> ></div>
+                  <em><%= "#{@reviews.length}条评论"%></em>
+                </td>
+              </tr>
+              <tr>
                 <td><strong>商户名:</strong></td>
                 <td><%= @shop.title %></td>
               </tr>
-              <tr>
-                <td><strong>小众评价:</strong></td>
-                <td><%= @shop.rating %></td>
-              </tr>
             </tbody>
           </table>
-          <%= link_to 'Write a Review', new_shop_review_path(@shop) %>
+          <%= link_to '写点评', new_shop_review_path(@shop), class: "btn btn-default btn-block" %>
         </div>
       </div>
-      <div class="col-md-7 col-md-offset-1">
+      <div class="col-md-6 col-md-offset-1">
         <h1 class="review-title"><%= @shop.title %></h1>
         <p><%= @shop.comment %></p>
 
