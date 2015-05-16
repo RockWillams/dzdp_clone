@@ -12,7 +12,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to "添加商户", new_shop_path, class: "active" %></li>
           <li><%= link_to "账户", edit_user_registration_path %></li>

@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Set header background to orange and text to white
+.navbar-default {
+  background-color: #ff7200;
+  .navbar-nav > li > a {
+    color: #fff;
+  }
+  .navbar-brand {
+    color: #fff;
+  }
+}
+
 .review_title {
 	margin: 0 0 20px 0;
 }

@@ -1,16 +1,19 @@
-<% if !user_signed_in? %>
-    <div class="jumbotron">
-    <h1>更有味道的小众点评</h1>
-    <p>小众点评更给力，更犀利，更不留余地！一起来小众点评吧！</p>
-    <p><%= link_to "加入小团伙", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
-  </div>
-<% end %>
+<div class="jumbotron">
+  <h1>更有味道的小众点评</h1>
+  <p>小众点评更给力，更犀利，更不留余地！一起来小众点评吧！</p>
+    <% if !user_signed_in? %>
+  <p><%= link_to "加入小团伙", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  <% end %>
+</div>
 
 <div class="row">
   <% @shops.each do |shop| %>
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
         <%= link_to (image_tag shop.image.url(:medium), class: 'image'), shop %>
+        <div class="caption">
+          <h5><%= shop.title %></h5>
+        </div>
       </div>
     </div>
   <% end %>
