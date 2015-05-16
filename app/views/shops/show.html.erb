@@ -1,44 +1,46 @@
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-5">
-        <%= image_tag @shop.image.url, class: "img-thumbnail" %>
-        <div class="table-responsive">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td><strong>总体评价:</strong></td>
-                <td>
-                  <div class="star-rating" data-score= <%= @avg_review %> ></div>
-                  <em><%= "#{@reviews.length}条评论"%></em>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>商户名:</strong></td>
-                <td><%= @shop.title %></td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Use .btn-block to optimize mobile view -->
-          <%= link_to '写点评', new_shop_review_path(@shop), class: "btn btn-default btn-block" %>
-        </div>
-      </div>
-      <div class="col-md-6 col-md-offset-1">
-        <h1 class="review-title"><%= @shop.title %></h1>
-        <p><%= @shop.comment %></p>
+<div class="col-md-5">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= image_tag @shop.image.url, class: "img-thumbnail" %>
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><strong>商户:</strong></td>
+              <td><%= @shop.title %></td>
+            </tr>
+            <tr>
+              <td><strong>总体评价:</strong></td>
+              <td>
+                <div class="star-rating" data-score= <%= @avg_review %> ></div>
+                <em><%= "#{@reviews.length}条评论"%></em>
+              </td>
+            </tr>
 
-        <% if @reviews.blank? %>
-          <h3>No reviews yet. Would you like to be the first?</h3>
-          <%= link_to 'Write a Review', new_shop_review_path(@shop), class: 'btn btn-danger' %>
-        <% else %>
-          <% @reviews.each do |review| %>
-            <div class="reviews">
-              <div class="star-rating" data-score= <%= review.rating %> ></div>
-              <p><%= review.comment %></p>
-            </div>
-          <% end %>
-        <% end %>
+          </tbody>
+        </table>
+        <!-- Use .btn-block to optimize mobile view -->
+        <%= link_to '写点评', new_shop_review_path(@shop), class: "btn btn-default btn-block" %>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-7">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3 class="review-title">小众点评</h3>
+      <% if @reviews.blank? %>
+        <h3>No reviews yet. Would you like to be the first?</h3>
+        <%= link_to 'Write a Review', new_shop_review_path(@shop), class: 'btn btn-danger' %>
+      <% else %>
+        <% @reviews.each do |review| %>
+          <div class="reviews">
+            <div class="star-rating" data-score= <%= review.rating %> ></div>
+            <p><%= review.comment %></p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
