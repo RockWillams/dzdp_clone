@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
+    <%= f.label :总体评价 %>
     <div id="star-rating"></div>
   </div>
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
+  <div class="form-group">
+    <%= f.label :评价 %><br>
+    <%= f.text_area :comment, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "提交点评", class: "btn btn-default btn-block" %>
   </div>
-<% end %>
+<% end %>  
 
 <script>
   $('#star-rating').raty({

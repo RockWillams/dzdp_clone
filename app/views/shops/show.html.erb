@@ -7,7 +7,7 @@
           <table class="table">
             <tbody>
               <tr>
-                <td><strong>小众评价:</strong></td>
+                <td><strong>总体评价:</strong></td>
                 <td>
                   <div class="star-rating" data-score= <%= @avg_review %> ></div>
                   <em><%= "#{@reviews.length}条评论"%></em>
@@ -19,6 +19,7 @@
               </tr>
             </tbody>
           </table>
+          <!-- Use .btn-block to optimize mobile view -->
           <%= link_to '写点评', new_shop_review_path(@shop), class: "btn btn-default btn-block" %>
         </div>
       </div>
