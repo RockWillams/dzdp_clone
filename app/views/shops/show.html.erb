@@ -3,6 +3,8 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag @shop.image.url(:medium) %>
+        <div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <em><%= "#{@reviews.length} reviews"%></em>
         <div class="table-responsive">
           <table class="table">
             <tbody>
@@ -29,7 +31,7 @@
         <% else %>
           <% @reviews.each do |review| %>
             <div class="reviews">
-              <p><%= review.rating %></p>
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
               <p><%= review.comment %></p>
             </div>
           <% end %>
@@ -41,3 +43,13 @@
 
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });  
+</script>
