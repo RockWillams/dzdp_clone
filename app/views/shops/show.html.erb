@@ -6,22 +6,28 @@
         <table class="table">
           <tbody>
             <tr>
-              <td><strong>商户:</strong></td>
-              <td><%= @shop.title %> <%= link_to 'Edit', edit_shop_path(@shop), class: "label label-primary" %> </td>
-            </tr>
-            <tr>
               <td><strong>总体评价:</strong></td>
               <td>
                 <div class="star-rating" data-score= <%= @avg_review %> ></div>
                 <em><%= "#{@reviews.length}条评论"%></em>
               </td>
             </tr>
-
+            <tr>
+              <td><strong>商户:</strong></td>
+              <td><%= @shop.title %> <%= link_to '修改', edit_shop_path(@shop), class: "label label-primary" %> </td>
+            </tr>
+            <tr>
+              <td><strong>商户地址:</strong></td>
+              <td><%= @shop.address %></td>
+            </tr>
           </tbody>
         </table>
         <!-- Use .btn-block to optimize mobile view -->
         <%= link_to '写点评', new_shop_review_path(@shop), class: "btn btn-default btn-block" %>
       </div>
+    </div>
+    <div class="panel-body">
+      地图预留位置
     </div>
   </div>
 </div>

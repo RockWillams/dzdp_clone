@@ -20,6 +20,18 @@
     <%= f.text_area :comment, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :商户地址 %><br>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :商户图片 %><br>
     <%= f.file_field :image, class: "form-control" %>
   </div>
