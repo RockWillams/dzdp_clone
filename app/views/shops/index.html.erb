@@ -6,11 +6,11 @@
   <% end %>
 </div>
 
-<div class="row">
+<div id="shops" class="transitions-enabled">
   <% @shops.each do |shop| %>
-    <div class="col-sm-6 col-md-3">
-      <div class="thumbnail">
-        <%= link_to (image_tag shop.image.url, class: 'image'), shop %>
+    <div class="box panel panel-default">
+      <%= link_to (image_tag shop.image.url(:medium)), shop %>
+      <div class="panel-body">
         <div class="caption">
           <h5><%= shop.title %></h5>
         </div>
