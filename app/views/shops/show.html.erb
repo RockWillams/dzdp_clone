@@ -37,8 +37,7 @@
     <div class="panel-body">
       <h3 class="review-title">小众点评</h3>
       <% if @reviews.blank? %>
-        <h3>No reviews yet. Would you like to be the first?</h3>
-        <%= link_to 'Write a Review', new_shop_review_path(@shop), class: 'btn btn-danger' %>
+        <h3>还没有点评，快来沙发！</h3>
       <% else %>
         <% @reviews.each do |review| %>
           <div class="reviews">
