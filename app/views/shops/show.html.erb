@@ -7,7 +7,7 @@
           <tbody>
             <tr>
               <td><strong>商户:</strong></td>
-              <td><%= @shop.title %></td>
+              <td><%= @shop.title %> <%= link_to 'Edit', edit_shop_path(@shop), class: "label label-primary" %> </td>
             </tr>
             <tr>
               <td><strong>总体评价:</strong></td>
@@ -44,9 +44,6 @@
     </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
 
 <script>
   $('.star-rating').raty({
